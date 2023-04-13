@@ -302,3 +302,65 @@ prices = {
 # 用股票价格大于100元的股票构造一个新的字典
 prices2 = {key: value for key, value in prices.items() if value > 100}
 print(prices2)
+
+s = '''`HOUSECODE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `BUILDINGUSAGE` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `AREA` decimal(8, 2) NULL DEFAULT NULL,
+  `CERTIFICATETYPE` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `CERTIFICATENO` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `HOUSEHOLDERNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `HOUSEHOLDERCERTIFICATENO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `HOUSEHOLDERCONTACT` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `HOUSEHOLDERADDRESS` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `HOUSEUSAGE` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `HIDDENDANGERTYPE` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `TENANTCERTIFICATENO` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `TENANTNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `TENANTCONTACT` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `BUILDINGCODE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `UNITNUM` decimal(65, 30) NOT NULL,
+  `FLOORNUM` decimal(65, 30) NOT NULL,
+  `HOUSENO` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `BUILDINGUSAGEVALUE` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `CERTIFICATETYPEVALUE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `HOUSEUSAGEVALUE` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `HIDDENDANGERTYPEVALUE` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `LASTUPDATETIME` datetime NULL DEFAULT NULL,
+  `HOUSENUM` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `CREATETIME` datetime NULL DEFAULT NULL'''
+s = s.split(",")
+
+t = '''	房屋
+	房屋地址
+	建筑用途
+	建筑面积(平方米)
+	证件代码
+	证件号码
+	房主姓名
+	房主证件证号
+	房主联系方式
+	房主现居详址
+	房屋用途
+	隐患类型
+	承租人公民身份证号码
+	承租人姓名
+	承租人联系方式
+	经度
+	纬度
+	楼栋名称
+	楼栋编码
+	所属单元
+	所属楼层
+	门牌号
+	最近更新时间
+	建筑用途值
+	证件代码值
+	房屋用途值
+	隐患类型值
+'''
+t = t.split()
+print(s)
+print(t)
+l =''
+t = max(t.count() )
+print(t)
