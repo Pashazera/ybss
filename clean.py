@@ -82,27 +82,28 @@ for s in sheet:
           ws.cell(ws_total, 2, ex2[s].cell(i, 2).value)
           ws.cell(ws_total, 3, ex2[s].cell(i, 3).value)
           ws.cell(ws_total, 4, ex2[s].cell(i, 7).value)
-          # if ex2[s].cell(i, 6).value[17] == 1:
-          #     ws.cell(ws_total,5,'男')
-          # else:
-          #     ws.cell(ws_total,5,'女')
+          if ex2[s].cell(i,6).value is not None:
+              if int(ex2[s].cell(i, 6).value[16]) % 2 == 1:
+                  ws.cell(ws_total, 5, '男')
+              else:
+                  ws.cell(ws_total, 5, '女')
 
-          ws.cell(ws_total, 6, data.cell(i, 5).value)
-          ws.cell(ws_total, 7, data.cell(i, 6).value)
-          ws.cell(ws_total, 8, data.cell(i, 4).value)
+          ws.cell(ws_total, 6, ex2[s].cell(i, 5).value)
+          ws.cell(ws_total, 7, ex2[s].cell(i, 6).value)
+          ws.cell(ws_total, 8, ex2[s].cell(i, 4).value)
       if ex2[s].cell(i,2).value is  None :
           ws.cell(ws_total, 1, ws_total - 1)
           ws.cell(ws_total, 2, ws.cell(ws_total-1,2).value)
           ws.cell(ws_total, 3, ex2[s].cell(i, 3).value)
           ws.cell(ws_total, 4, ex2[s].cell(i, 7).value)
-          # if ex2[s].cell(i, 6).value[17] == '1':
-          #     ws.cell(ws_total, 5, '男')
-          # else:
-          #     ws.cell(ws_total, 5, '女')
-
-          ws.cell(ws_total, 6, data.cell(i, 5).value)
-          ws.cell(ws_total, 7, data.cell(i, 6).value)
-          ws.cell(ws_total, 8, data.cell(i, 4).value)
+          if ex2[s].cell(i, 6).value is not None:
+              if int(ex2[s].cell(i, 6).value[16]) % 2 == 1:
+                  ws.cell(ws_total, 5, '男')
+              else:
+                  ws.cell(ws_total, 5, '女')
+          ws.cell(ws_total, 6, ex2[s].cell(i, 5).value)
+          ws.cell(ws_total, 7, ex2[s].cell(i, 6).value)
+          ws.cell(ws_total, 8, ex2[s].cell(i, 4).value)
 
       if ex2[s].cell(i,3).value is  None :
           break
