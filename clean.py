@@ -76,7 +76,7 @@ ex2 = op.load_workbook(filename=filename2,data_only=True)
 
 sheet = ex2.sheetnames
 for s in sheet:
-    for i in range(2,ex2[s].max_row):
+    for i in range(2,ex2[s].max_row + 1):
       if ex2[s].cell(i,2).value is not None :
           ws.cell(ws_total, 1, ws_total - 1)
           ws.cell(ws_total, 2, ex2[s].cell(i, 2).value)
@@ -88,10 +88,12 @@ for s in sheet:
               else:
                   ws.cell(ws_total, 5, '女')
 
+
           ws.cell(ws_total, 6, ex2[s].cell(i, 5).value)
           ws.cell(ws_total, 7, ex2[s].cell(i, 6).value)
           ws.cell(ws_total, 8, ex2[s].cell(i, 4).value)
-      if ex2[s].cell(i,2).value is  None :
+          ws_total = ws_total + 1
+      if ex2[s].cell(i,2).value is  None and ex2[s].cell(i,3).value is not None:
           ws.cell(ws_total, 1, ws_total - 1)
           ws.cell(ws_total, 2, ws.cell(ws_total-1,2).value)
           ws.cell(ws_total, 3, ex2[s].cell(i, 3).value)
@@ -104,10 +106,7 @@ for s in sheet:
           ws.cell(ws_total, 6, ex2[s].cell(i, 5).value)
           ws.cell(ws_total, 7, ex2[s].cell(i, 6).value)
           ws.cell(ws_total, 8, ex2[s].cell(i, 4).value)
-
-      if ex2[s].cell(i,3).value is  None :
-          break
-      ws_total = ws_total + 1
+          ws_total = ws_total + 1
 
 
 wb.save("data.xlsx")
